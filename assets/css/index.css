@@ -8,14 +8,17 @@ body {
 
 .cards {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  justify-content: center; }
 
 .card {
   background-color: #fff;
   border-radius: 12px;
   padding: 3em;
   box-shadow: 4px 4px 15px 2px rgba(21, 3, 65, 0.75);
-  transition: 0.2s; }
+  transition: 0.2s;
+  min-width: 13%;
+  max-width: 18%; }
   .card:not(:first-child) {
     margin-left: -4em; }
   .card:hover, .card:focus-within {

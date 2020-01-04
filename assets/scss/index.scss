@@ -10,6 +10,7 @@ body {
 .cards {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card {
@@ -18,6 +19,8 @@ body {
     padding: 3em;
     box-shadow: 4px 4px 15px 2px rgba(rgb(21, 3, 65), 0.75);
     transition: 0.2s;
+    min-width: 13%;
+    max-width: 18%;
 
     &:not(:first-child) {
         margin-left: -4em;
