@@ -11,30 +11,94 @@ html {
 
 body {
   font: 75% georgia, sans-serif;
-  color: #333; }
+  color: #333;
+  margin: 0; }
 
-.page-wrapper {
-  margin: 20px; }
+abbr {
+  text-decoration: none; }
 
 .intro {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "header header" "summary preamble";
+  grid-template-areas: "summary preamble";
   grid-column-gap: 1em;
   grid-row-gap: 1em; }
+  .intro h1 {
+    font-size: xx-large; }
 
 *[role="banner"] {
-  grid-area: header;
-  justify-self: center;
-  align-self: center; }
-  *[role="banner"] h1 {
-    text-align: center; }
+  text-align: center;
+  padding-top: 3em;
+  font-size: 3em; }
+
+.img-scroll {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(../img/schrecksee-2534484_1920.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+  color: #fff; }
 
 .summary {
   grid-area: summary;
   margin: 1em; }
+  .summary a {
+    background-color: #33da9a;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 0.3em;
+    border-radius: 6px;
+    display: inline-flex;
+    transition: 0.3s ease; }
+    .summary a:active {
+      transform: scale(0.5); }
 
 .preamble {
   grid-area: preamble;
   margin: 1em; }
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-areas: "explanation explanation explanation" "participation benefits requirements" "footer footer footer ";
+  grid-column-gap: 1em;
+  grid-row-gap: 1em; }
+  .main footer {
+    font-size: x-large;
+    grid-area: footer;
+    padding: 2em;
+    justify-self: center;
+    align-self: center; }
+  .main .explanation {
+    grid-area: explanation;
+    background-color: lightcyan;
+    height: 25vh;
+    padding: 0 2em; }
+    .main .explanation h3 {
+      justify-self: center; }
+  .main .participation {
+    grid-area: participation; }
+  .main .benefits {
+    grid-area: benefits; }
+  .main .requirements {
+    grid-area: requirements; }
+
+.sidebar .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "design-selection . ." ". design-archives ." ". . zen-resources";
+  grid-column-gap: 1em;
+  grid-row-gap: 1em; }
+
+.sidebar .design-selection {
+  grid-area: design-selection; }
+
+.sidebar .design-archives {
+  grid-area: design-archives; }
+
+.sidebar .zen-resources {
+  grid-area: zen-resources; }
