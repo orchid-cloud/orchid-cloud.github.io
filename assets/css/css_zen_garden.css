@@ -17,6 +17,92 @@ body {
 abbr {
   text-decoration: none; }
 
+.nav {
+  height: 10vh;
+  background-color: mediumslateblue;
+  position: relative; }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  width: 80%;
+  height: 45vh;
+  margin: auto;
+  justify-content: space-around;
+  padding-top: 20px; }
+  .nav-links .authors,
+  .nav-links .archives,
+  .nav-links .resources {
+    position: relative; }
+    .nav-links .authors a,
+    .nav-links .archives a,
+    .nav-links .resources a {
+      text-decoration: none;
+      color: green;
+      line-height: 20px; }
+    .nav-links .authors ul,
+    .nav-links .archives ul,
+    .nav-links .resources ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      position: absolute;
+      padding: 0;
+      background-color: linen;
+      width: 150px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0 0 5px 5px;
+      transform: translateY(15px);
+      transition: all 0.8s ease;
+      opacity: 0;
+      visibility: hidden; }
+    .nav-links .authors .nav-header:focus + ul,
+    .nav-links .authors:focus-within > ul,
+    .nav-links .archives .nav-header:focus + ul,
+    .nav-links .archives:focus-within > ul,
+    .nav-links .resources .nav-header:focus + ul,
+    .nav-links .resources:focus-within > ul {
+      opacity: 1;
+      visibility: visible; }
+    .nav-links .authors .nav-header,
+    .nav-links .archives .nav-header,
+    .nav-links .resources .nav-header {
+      font-size: 20px;
+      text-decoration: none;
+      color: white;
+      padding-top: 10px; }
+
+.dropdown {
+  height: 10vh;
+  background-color: white;
+  display: flex;
+  justify-content: space-around; }
+
+.nav-links.open {
+  clip-path: circle(1000px at 90% -10%);
+  -webkit-clip-path: circle(1000px at 90% -10%);
+  pointer-events: all; }
+
+.line {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px; }
+
+nav {
+  position: relative; }
+
+.hamburger {
+  position: absolute;
+  cursor: pointer;
+  right: 5%;
+  top: 50%;
+  transform: translate(-5%, -50%);
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden; }
+
 .intro {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -102,3 +188,51 @@ abbr {
 
 .sidebar .zen-resources {
   grid-area: zen-resources; }
+
+.benefits-txt {
+  background-color: lightpink;
+  border-radius: 10px;
+  border-style: dashed;
+  border-color: lime;
+  padding: 5px 10px;
+  line-height: 25px; }
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    background-color: mediumslateblue;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+    padding: 0; }
+    .nav-links .authors,
+    .nav-links .archives,
+    .nav-links .resources {
+      align-items: center; }
+      .nav-links .authors ul,
+      .nav-links .archives ul,
+      .nav-links .resources ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        position: relative;
+        padding: 0;
+        background-color: transparent;
+        color: #fff;
+        width: initial;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        visibility: visible; }
+        .nav-links .authors ul a,
+        .nav-links .archives ul a,
+        .nav-links .resources ul a {
+          color: white; }
+  .hamburger {
+    opacity: 1;
+    visibility: visible; } }
