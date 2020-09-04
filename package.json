@@ -19,6 +19,6 @@
   "homepage": "https://github.com/orchid-cloud/orchid-cloud.github.io#readme",
   "dependencies": {},
   "devDependencies": {
-    "node-sass": "^4.13.0"
+    "node-sass": "^4.13.1"
   }
 }
